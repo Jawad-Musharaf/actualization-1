@@ -12,7 +12,6 @@ const OurServices = () => {
               <img className="animate__animated animate__zoomIn dairyimg" src={dairy} />
            </div>
      </div>
-      
     </div>
   );
 };
