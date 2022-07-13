@@ -365,28 +365,28 @@ header .logo{
 
 .blocksection.page2 {
   background: rgba(255, 255, 0, 0.932);
-  /* top: 100%;
+  top: 100%;
   left: 0;
-  position: absolute; */
+  position: absolute;
 }
 
 .blocksection.page3 {
   background: rgb(117, 207, 0);
-  /* top: 200%;
+  top: 200%;
   left: 0;
-  position: absolute; */
+  position: absolute;
 }
 
 .blocksection.page4 {
   background: rgb(196, 0, 179);
-  /* top: 300%;
+  top: 300%;
   left: 0;
-  position: absolute; */
+  position: absolute;
 }
 
 .content .blocksection {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
 }
 /* .main section {
   overflow: hidden;
