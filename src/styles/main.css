@@ -15,15 +15,39 @@ body {
   width: 100%;
   padding: 0 15px;
 }
+.loaderData{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 22;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.loaderData h2{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
 header {
   text-align: center;
   position: fixed;
   width: 100%;
   height: 60px;
   top: 0;
-
-
+  z-index: 11;
+  background-color: #000000;
   font-family: 'Open Sans', sans-serif;
+
 }
 
 header span {
@@ -34,6 +58,7 @@ header span {
   display: inline-block;
   text-decoration: none;
   padding-top: 10px;
+  cursor: pointer;
 }
 
 header span.active {
@@ -65,11 +90,11 @@ header .logo{
   max-width: 90%;
   width: 100%;
   margin: 0 auto;
-  padding-top: 60px;
-  position: relative;
+  padding-top: 30px;
+  /* position: relative; */
 }
 .ourServices {
-  overflow: auto;
+  overflow-y: auto;
   overflow-x: hidden;
   color: #fff;
   padding: 0 35px 0 25px;
@@ -77,15 +102,13 @@ header .logo{
   width: 100%;
   height: 100%;
   display: block;
-
-
   /* display: flex;
   align-items: center;
   justify-content: center; */
 }
 
 
-.ourServices  h1{
+.ourServices  h1.maintitle{
     font-size: 96px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -95,17 +118,62 @@ header .logo{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
+}
+.contact  h1, .about h1{
+    font-size: 60px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+   
+}
+.contact  p, .about p{
+    font-size: 16px;
+    
+    text-align: center;
+    margin: 10px 0 0;
+    color: #fff;
+   
+}
+.about p{
+    max-width: 70%;
+    margin: 30px auto 0;
+}
+.formMain{
+
+ max-width: 480px;
+ margin: 20px auto 0;
 }
 
+.formMain input{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.formMain textarea{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 160px;
+}
 
+.formMain button{
+    height: 45px;
+    text-align: center;
+    background-color: #BDBDBD;
+    color: #000;
+    width: 100%;
+    border-radius: 10px;
+}
 .mousePointer{
     position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 30px;
 }
 
-.info{
+/* .info{
     background-image: url("/public/bg_logo.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -114,9 +182,49 @@ header .logo{
     bottom: 0;
     width: 100%;
     height: 100%;
+} */
+
+.info img{ 
+    position: absolute;
+    z-index: -1;
+    max-width: 100%;
+    display: block;
+    /* margin: 0 auto; */
+    top: 0;
+    animation: zoomout 1s;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+.info h2{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+@keyframes zoomout{
+    0%{
+      transform: scale(1.3) translateX(-50%);
+    }
+    100%{
+      transform: scale(1) translateX(-50%);
+    }
+  }
+.info p{
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+ 
+   
+}
 
+.info.animate__animated{
+    animation-fill-mode: initial !important;
+}
 .sections{
   width: 100%;
   text-align: center;
@@ -137,18 +245,18 @@ header .logo{
 }
 
 .sections.active .tabletimg{
-	animation: grow 4s linear forwards;
-	opacity: 1;
+  animation: grow 4s linear forwards;
+  opacity: 1;
 }
 
 @keyframes grow {
-	0%, 20% {
-		transform: scale(2);
-	}
-	
-	75%, 100% {
-		transform: scale(.8);
-	}
+  0%, 20% {
+    transform: scale(2);
+  }
+  
+  75%, 100% {
+    transform: scale(.8);
+  }
 }
 
 .title1{
@@ -163,8 +271,8 @@ header .logo{
 }
 
 .sections.active .title1{
-	animation: grows 4s linear forwards;
-	opacity: 1;
+  animation: grows 4s linear forwards;
+  opacity: 1;
 }
 
 .sections.active .title1 h1{
@@ -173,23 +281,20 @@ header .logo{
 }
 
 @keyframes grows {
-	0%, 20% {
-		transform: scale(2);
+  0%, 20% {
+    transform: scale(2);
     bottom:-100%;
-	}
-	
-	75%, 100% {
-		transform: scale(.8);
+  }
+  
+  75%, 100% {
+    transform: scale(.8);
     bottom:72%;
-	}
-}
-
-.smartimg_Inner{
-  margin-left: -500px;
+  }
 }
 
 .smartimg{
-  margin: 0;
+  margin-left: -32%;
+  top: 26%;
 }
 
 .sections.active .smartimg{
@@ -197,15 +302,15 @@ header .logo{
 }
 
 @keyframes grown {
-	0%, 20% {
-		transform: scale(2);
+  0%, 20% {
+    transform: scale(2);
     bottom:-100%;
-	}
-	
-	75%, 100% {
-		transform: scale(.2);
+  }
+  
+  75%, 100% {
+    transform: scale(.2);
     bottom:85%;
-	}
+  }
 }
 
 
@@ -227,6 +332,29 @@ header .logo{
   right: 0;
 }
 
+.smartimg_Inner_b{
+  margin-left: -21%;
+  margin-bottom: -40%;
+}
+
+.sections.active .smartimg{
+  animation: stgrown 4s linear forwards; 
+}
+
+@keyframes stgrown {
+  0%, 20% {
+    transform: scale(2);
+    bottom:0;
+    opacity: 0;
+  }
+  
+  75%, 100% {
+    transform: scale(.1);
+    bottom:100%;
+    opacity: 1;
+  }
+}
+
 
 .blocksection.page1 {
   background: gray;
@@ -237,28 +365,28 @@ header .logo{
 
 .blocksection.page2 {
   background: rgba(255, 255, 0, 0.932);
-  top: 100%;
+  /* top: 100%;
   left: 0;
-  position: absolute;
+  position: absolute; */
 }
 
 .blocksection.page3 {
   background: rgb(117, 207, 0);
-  top: 200%;
+  /* top: 200%;
   left: 0;
-  position: absolute;
+  position: absolute; */
 }
 
 .blocksection.page4 {
   background: rgb(196, 0, 179);
-  top: 300%;
+  /* top: 300%;
   left: 0;
-  position: absolute;
+  position: absolute; */
 }
 
 .content .blocksection {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 /* .main section {
   overflow: hidden;
@@ -269,3 +397,60 @@ header .logo{
   to {left: 0;}
 } */
 
+
+.laptopimg{
+  position: absolute;
+    left: 50%;
+    right: 0;
+    top: 0;
+    margin-left: -40%;
+}
+
+.sections.active .laptopimg{
+  animation: lpgrow 4s linear forwards;
+  opacity: 1;
+}
+
+@keyframes lpgrow {
+  0%, 20% {
+    transform: scale(2);
+  }
+  
+  75%, 100% {
+    transform: scale(.8);
+  }
+}
+
+
+.sections.active .fade-in-image {
+  animation: fadeIn 20s;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  margin-left: -5%;
+}
+
+.fade-in-image h1{
+  font-size: 50px;
+  margin-top: 0;
+  color: #fff;
+  letter-spacing: 5px;
+  text-align: left;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-in-image p{
+  font-size: 15px;
+  color: #fff;
+  width: 310px;
+  text-align: left;
+}
+
+.sections.active  .smartimg .title1{
+  margin-bottom: -20%;
+  margin-left: -30%;
+}
